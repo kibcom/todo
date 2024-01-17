@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './TodoList.css';
 import{BiCheckDouble, BiEdit, BiTrash, BiCheckCircle, BiReset, BiRefresh} from 'react-icons/bi';
-import userEvent from '@testing-library/user-event';
+ 
 function TodoList() {
     const[todos, setTodos] = useState([])
     const[inputvalue, setInputValue] =useState('')
@@ -40,8 +40,9 @@ function TodoList() {
 
     }
     const toggleCompleted = (index) => {
-        const updatedTodos = [...todos]
-        updatedTodos[index].completed= !updatedTodos[index].completed
+        const updatedTodos = [...todos];
+        updatedTodos[index].completed= !updatedTodos[index].completed;
+        setTodos(updatedTodos);
     }
 
   return (
